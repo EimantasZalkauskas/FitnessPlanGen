@@ -7,7 +7,7 @@ class MuscleGroupClass():
         self.myConnection = None
 
         self.arr_of_ids = None
-        self.query_get_id = """SELECT "ExerciseID" FROM  "ExerciseInfo" WHERE "Difficulty" = 'Low' OR "Difficulty" = 'Mid'; """
+        self.query_get_id = """SELECT "ExerciseID" FROM  "ExerciseInfo"; """
         self.arr_of_dicts_with_all_data = None
         self.query_get_all_from_id = """SELECT * FROM  "ExerciseInfo" WHERE "ExerciseID" = '{}' """
         self.select_from_group_column_query = """SELECT Group FROM  "ExerciseInfo" WHERE "Base_Category" = {} """
@@ -60,7 +60,8 @@ class MuscleGroupClass():
                     "Set_Length" : row[7], 
                     "Rest_Time" : row[8],
                     "Muscle_Trained": row[9],
-                    "Base_Category": row[10]
+                    "Base_Category": row[10],
+                    "Group_Weight": row[11]
                 }
                 output_arr.append(new_dict)
 
